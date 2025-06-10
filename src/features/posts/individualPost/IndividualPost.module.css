@@ -1,0 +1,70 @@
+.posts {
+  text-align: left;
+  width: 66%;
+}
+
+.post {
+  display: flex;
+  margin: 0 5% 5% 0;
+  padding: 5%;
+  background-color: white;
+}
+
+.postBody {
+  width: 100%;
+  overflow: hidden;
+}
+
+.postBody img {
+  width: 100%;
+  height: auto;
+}
+
+.postBody footer {
+  font-size: 0.8rem;
+  margin-top: 2%;
+  border-top: 1px solid black;
+}
+
+.readMore {
+  font-weight: bold;
+  font-style: italic;
+  padding-left: 1rem;
+}
+
+.posts a {
+  color: black;
+  text-decoration: none;
+}
+
+.posts a:hover {
+  color: orangered;
+}
+
+.goBack {
+  font-size: 1rem;
+  color: black;
+  cursor: pointer;
+  background-color: white;
+  border: none;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+  padding: 10px;
+}
+
+.goBack:hover {
+  background-color: red;
+  color: white;
+}
+
+.goBack:active {
+  background-color: red;
+  color: white;
+  border: none;
+}
+
+@media only screen and (max-width: 800px) {
+  .posts {
+    width: 100%;
+  }
+}

@@ -1,0 +1,16 @@
+.subSelector {
+  font-size: 1rem;
+  color: black;
+  cursor: pointer;
+  background-color: white;
+  border: none;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+  padding: 10px;
+}
+
+@media only screen and (min-width: 801px) {
+  .subSelector {
+    display: none;
+  }
+}

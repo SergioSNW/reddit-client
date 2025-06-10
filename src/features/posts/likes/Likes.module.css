@@ -1,0 +1,19 @@
+.likes {
+  max-width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 1.5rem;
+}
+
+.likes p {
+  font-weight: bolder;
+}
+
+.likes svg {
+  pointer-events: none;
+}
+
+.upVotesButton:hover {
+  cursor: pointer;
+}

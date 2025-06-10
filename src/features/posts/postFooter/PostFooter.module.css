@@ -1,0 +1,36 @@
+.postInfos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+.postInfos {
+  list-style-type: none;
+}
+
+.postInfos li {
+  display: inline;
+}
+
+.postInfos li:last-child {
+  display: inline-flex;
+  align-items: center;
+}
+
+.postInfos li:last-child span {
+  margin-left: 3px;
+  color: black;
+  font-weight: normal;
+}
+
+.postInfos li span {
+  font-weight: bold;
+  color: orangered;
+}
+
+.commentsIcon:hover {
+  cursor: pointer;
+}

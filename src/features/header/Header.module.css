@@ -1,0 +1,29 @@
+.mainHeader {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4%;
+  background-color: orangered;
+}
+
+.mainHeader a {
+  text-decoration: none;
+}
+
+.mainHeader h1 {
+  width: 33%;
+  min-width: 250px;
+  text-align: left;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.mainHeader h1:hover {
+  cursor: pointer;
+}
+
+.mainHeader h1 span {
+  font-weight: 100;
+  font-style: italic;
+  text-transform: capitalize;
+}
