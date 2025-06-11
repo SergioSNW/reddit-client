@@ -15,19 +15,21 @@ function App() {
   const activeSub = useSelector((state) => state.subreddits.activeSubreddit);
   const dispatch = useDispatch();
 
-  useEffect(
-    () =>
-      fetchSubredditPosts(activeSub).then((response) => {
-        dispatch(changePosts(response));
-      }),
-    [activeSub]
-  );
+  const fetchData = async () =>
+    fetchSubredditPosts(activeSub).then((response) => {
+      dispatch(changePosts(response));
+    });
+
+  useEffect(() => {
+    fetchData();
+  }, [activeSub]);
 
   return (
     <Router>
       <Fragment>
         <div className="App">
           <Header />
+          <h1>Hello World</h1>
           <main>
             <Routes>
               <Route

@@ -12,7 +12,7 @@ export const SubredditsDropdown = (props) => {
   const dispatch = useDispatch();
 
   const activeSub = useSelector((state) => state.subreddits.activeSubreddit);
-  const subreddits = useSelector((state) => state.subreddits.SubReddits);
+  const subReddits = useSelector((state) => state.subreddits.subReddits);
 
   const onOptionSelected = (e) => {
     dispatch(changeActiveSubreddit(e.target.value));
@@ -35,6 +35,6 @@ export const SubredditsDropdown = (props) => {
   };
 
   return (
-    <section className={styles.subreddits}>{dropdown(subreddits)}</section>
+    <section className={styles.subreddits}>{dropdown(subReddits)}</section>
   );
 };
