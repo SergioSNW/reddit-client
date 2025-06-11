@@ -9,20 +9,24 @@ import { Posts } from './features/posts/Posts';
 import { IndividualPost } from './features/posts/individualPost/IndividualPost';
 import { Subreddits } from './features/subreddits/Subreddits';
 import { fetchSubredditPosts } from './app/RedditAPI';
-import { changePosts } from './features/posts/postsSlice';
+import { changePosts, fetchPosts } from './features/posts/postsSlice';
 
 function App() {
   const activeSub = useSelector((state) => state.subreddits.activeSubreddit);
   const dispatch = useDispatch();
 
-  const fetchData = async () =>
-    fetchSubredditPosts(activeSub).then((response) => {
-      dispatch(changePosts(response));
-    });
-
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetchSubredditPosts(activeSub);
+        dispatch(changePosts(response));
+      } catch (error) {
+        console.error('Fetch error:', error);
+      }
+    };
     fetchData();
-  }, [activeSub]);
+  }, [activeSub, dispatch]); // ✅ Add dispatch to dependencies
+  dispatch(fetchPosts(activeSub));
 
   return (
     <Router>
@@ -31,7 +35,7 @@ function App() {
           <Header />
           <h1>Hello World</h1>
           <main>
-            <Routes>
+            {/* <Routes>
               <Route
                 exact
                 path="/individualPost"
@@ -40,7 +44,9 @@ function App() {
             </Routes>
             <Routes>
               <Route exact path="/" element={<Posts />}></Route>
-            </Routes>
+            </Routes> */}
+            <IndividualPost />
+            <Posts />
 
             <Subreddits logo={logo.svg} />
           </main>
