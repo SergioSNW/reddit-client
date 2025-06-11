@@ -2,18 +2,33 @@ import { createSlice } from '@reduxjs/toolkit';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { fetchSubredditPosts } from '../../app/RedditAPI';
 
+const initialState = {
+  posts: [],
+  status: 'idle',
+  error: null,
+};
+
 const postsSlice = createSlice({
   name: 'posts',
-  initialState: [],
+  initialState: initialState,
   reducers: {
     changePosts: (state, action) => {
       return action.payload;
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchPosts.fulfilled, (state, action) => {
-      return action.payload;
-    });
+    builder
+      .addCase(fetchPosts.pending, (state) => {
+        state.status = 'loading'; // Requires initialState to include status
+      })
+      .addCase(fetchPosts.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        return action.payload;
+      })
+      .addCase(fetchPosts.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      });
   },
 });
 

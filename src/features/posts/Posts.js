@@ -10,7 +10,7 @@ import { SubredditsDropdown } from '../subredditsDropdown/SubredditsDropdown';
 
 export const Posts = () => {
   const activeSearchInput = useSelector((state) => state.search);
-  const posts = useSelector((state) => state.posts);
+  const posts = useSelector((state) => state.posts.posts);
   const dispatch = useDispatch();
 
   const filteredPosts = posts.filter((post) =>

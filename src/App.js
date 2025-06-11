@@ -10,22 +10,16 @@ import { IndividualPost } from './features/posts/individualPost/IndividualPost';
 import { Subreddits } from './features/subreddits/Subreddits';
 import { fetchSubredditPosts } from './app/RedditAPI';
 import { changePosts, fetchPosts } from './features/posts/postsSlice';
+import { selectActiveSubreddit } from './features/subreddits/subredditsSlice';
 
 function App() {
-  const activeSub = useSelector((state) => state.subreddits.activeSubreddit);
+  const activeSub = useSelector(selectActiveSubreddit);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetchSubredditPosts(activeSub);
-        dispatch(changePosts(response));
-      } catch (error) {
-        console.error('Fetch error:', error);
-      }
-    };
-    fetchData();
-  }, [activeSub, dispatch]); // ✅ Add dispatch to dependencies
+    dispatch(fetchPosts(activeSub));
+  }, [activeSub, dispatch]);
+
   dispatch(fetchPosts(activeSub));
 
   return (
@@ -35,16 +29,16 @@ function App() {
           <Header />
           <h1>Hello World</h1>
           <main>
-            {/* <Routes>
+            <Routes>
               <Route
                 exact
-                path="/individualPost"
+                path="/post/:id"
                 element={<IndividualPost />}
               ></Route>
             </Routes>
             <Routes>
               <Route exact path="/" element={<Posts />}></Route>
-            </Routes> */}
+            </Routes>
             <IndividualPost />
             <Posts />
 

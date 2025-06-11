@@ -17,4 +17,6 @@ const subredditsSlice = createSlice({
 });
 
 export const { addSubreddit, changeActiveSubreddit } = subredditsSlice.actions;
+export const selectActiveSubreddit = (state) =>
+  state.subreddits.activeSubreddit;
 export default subredditsSlice.reducer;
