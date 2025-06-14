@@ -13,7 +13,7 @@ const postsSlice = createSlice({
   initialState: initialState,
   reducers: {
     changePosts: (state, action) => {
-      return action.payload;
+      state.posts = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -23,8 +23,7 @@ const postsSlice = createSlice({
       })
       .addCase(fetchPosts.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        return action.payload;
-      })
+        state.posts = action.payload;      })
       .addCase(fetchPosts.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;

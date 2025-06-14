@@ -1,6 +1,7 @@
 import React from 'react';
 
-export const WEB_Root = 'https://reddit.com';
+export const WEB_Root = 'https://api.reddit.com';
+// export const WEB_Root = 'https://reddit.com';
 
 // Asynchronous function for fetching Subreddits
 export const fetchSubreddits = async () => {
@@ -8,7 +9,7 @@ export const fetchSubreddits = async () => {
   const json = await response.json();
 
   // Returns the data from the children of the Json
-  return json.data.children.map((subreddit) => subreddit.data);
+  return json.data.children.map((subreddit) => subreddit.data);   //dentro de este map se produce el immer
 };
 
 // ASynchronous function for fetching subreddit posts

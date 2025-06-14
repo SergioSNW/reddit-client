@@ -24,30 +24,18 @@ function App() {
 
   return (
     <Router>
-      <Fragment>
-        <div className="App">
-          <Header />
-          <h1>Hello World</h1>
-          <main>
-            <Routes>
-              <Route
-                exact
-                path="/post/:id"
-                element={<IndividualPost />}
-              ></Route>
-            </Routes>
-            <Routes>
-              <Route exact path="/" element={<Posts />}></Route>
-            </Routes>
-            <IndividualPost />
-            <Posts />
-
-            <Subreddits logo={logo.svg} />
-          </main>
-        </div>
-      </Fragment>
+      <div className="App">
+        <Header />
+        <h1>Hello World</h1>
+        <main>
+          <Routes>
+            <Route path="/" element={<Posts />} />
+            <Route path="/post/:id" element={<IndividualPost />} />
+          </Routes>
+          <Subreddits logo={logo} />
+        </main>
+      </div>
     </Router>
-  );
-}
+  );}
 
 export default App;

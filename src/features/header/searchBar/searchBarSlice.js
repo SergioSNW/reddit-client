@@ -4,7 +4,7 @@ export const searchBarSlice = createSlice({
   name: 'search',
   initialState: '',
   reducers: {
-    changeActiveSearch: (state, action) => (state = action.payload),
+    changeActiveSearch: (state, action) => action.payload,
   },
 });
 

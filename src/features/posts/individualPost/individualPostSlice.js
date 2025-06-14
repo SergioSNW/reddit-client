@@ -4,7 +4,7 @@ const individualPostSlice = createSlice({
   name: 'individualPostId',
   initialState: '',
   reducers: {
-    changeActivePostId: (state, action) => (state = action.payload),
+    changeActivePostId: (state, action) =>  action.payload,
   },
 });
 

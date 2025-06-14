@@ -13,7 +13,7 @@ export const Posts = () => {
   const posts = useSelector((state) => state.posts.posts);
   const dispatch = useDispatch();
 
-  const filteredPosts = posts.filter((post) =>
+   const filteredPosts = posts.filter((post) =>
     post.title.toLowerCase().includes(activeSearchInput.toLowerCase())
   );
 
@@ -40,8 +40,9 @@ export const Posts = () => {
                 <p className={styles.readMore}>read more...</p>
               ) : null}
               <img
-                src={post.url}
-                onError={(e) => (e.target.display = 'none')}
+                src={post.icon}
+                // src={post.url}
+                // onError={(e) => (e.target.display = 'none')}
               />
             </Link>
             <PostFooter
