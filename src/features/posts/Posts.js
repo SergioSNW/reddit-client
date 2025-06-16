@@ -40,9 +40,9 @@ export const Posts = () => {
                 <p className={styles.readMore}>read more...</p>
               ) : null}
               <img
-                src={post.icon}
-                // src={post.url}
-                // onError={(e) => (e.target.display = 'none')}
+                // src={post.icon}
+                src={post.url}
+                onError={(e) => (e.target.display = 'none')}
               />
             </Link>
             <PostFooter
