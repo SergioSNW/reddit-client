@@ -9,7 +9,7 @@ export const SearchBar = () => {
 
   const activeSubSliced = useSelector(
     (state) => state.subreddits.activeSubreddit
-  ).slice(3, -1);
+  ).slice(3);
   const searchBarValue = useSelector((state) => state.search);
 
   const onTextChange = (e) => {

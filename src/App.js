@@ -26,7 +26,6 @@ function App() {
     <Router>
       <div className="App">
         <Header />
-        <h1>Hello World</h1>
         <main>
           <Routes>
             <Route path="/" element={<Posts />} />
@@ -36,6 +35,7 @@ function App() {
         </main>
       </div>
     </Router>
-  );}
+  );
+}
 
 export default App;

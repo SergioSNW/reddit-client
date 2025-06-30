@@ -18,7 +18,7 @@ export const Header = () => {
     <header className={styles.mainHeader}>
       <Link to="/">
         <h1 onClick={onTitleClicked}>
-          Reddit<span>ISH</span>
+          Reddit? <span>YEAH BABY!</span>
         </h1>
       </Link>
       <SearchBar className={styles.searchBar} />
