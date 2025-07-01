@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import React from 'react';
 import styles from './Posts.module.css';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -13,7 +13,7 @@ export const Posts = () => {
   const posts = useSelector((state) => state.posts.posts);
   const dispatch = useDispatch();
 
-   const filteredPosts = posts.filter((post) =>
+  const filteredPosts = posts.filter((post) =>
     post.title.toLowerCase().includes(activeSearchInput.toLowerCase())
   );
 
@@ -41,6 +41,7 @@ export const Posts = () => {
               ) : null}
               <img
                 // src={post.icon}
+                alt="post asset uploaded by the author"
                 src={post.url}
                 onError={(e) => (e.target.display = 'none')}
               />

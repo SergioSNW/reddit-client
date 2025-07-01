@@ -3,6 +3,7 @@
   margin: 1.2rem 0;
   width: 33%;
   min-width: 300px;
+  max-width: 500px;
   min-height: 40px;
   padding-left: 15px;
   border-radius: 12px;
@@ -10,4 +11,11 @@
 
 .searchBar:focus {
   border: none !important;
+  margin: 1.2rem 0;
+  width: 33%;
+  min-width: 300px;
+  max-width: 500px;
+  min-height: 40px;
+  padding-left: 15px;
+  border-radius: 12px;
 }
