@@ -17,8 +17,11 @@ export const Posts = () => {
     post.title.toLowerCase().includes(activeSearchInput.toLowerCase())
   );
 
+  const debug = console.log(posts, filteredPosts);
+
   return (
     <section className={styles.posts}>
+      {/* <span>{debug}</span> */}
       <SubredditsDropdown />
       {filteredPosts.map((post) => (
         <section className={styles.post} key={post.id}>
