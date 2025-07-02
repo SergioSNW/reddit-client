@@ -1,5 +1,5 @@
-import React, { Fragment, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
@@ -9,7 +9,7 @@ import { Posts } from './features/posts/Posts';
 import { IndividualPost } from './features/posts/individualPost/IndividualPost';
 import { Subreddits } from './features/subreddits/Subreddits';
 import { fetchSubredditPosts } from './app/RedditAPI';
-import { changePosts, fetchPosts } from './features/posts/postsSlice';
+import { fetchPosts } from './features/posts/postsSlice';
 import { selectActiveSubreddit } from './features/subreddits/subredditsSlice';
 
 function App() {

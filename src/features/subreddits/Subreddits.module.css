@@ -18,11 +18,15 @@ img {
 
 .subreddits ul {
   list-style-type: none;
+  border: 1px black;
+  background-color: #656565;
+  border-radius: 8px;
 }
 
 .subreddits ul li {
   padding: 1rem 0;
-  padding-left: 0.5rem;
+  padding-left: 0rem;
+  padding-right: 0.5rem;
   display: flex;
   align-content: center;
   border-bottom: 2px solid black;
